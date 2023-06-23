@@ -14,7 +14,7 @@ const sliceData = (data: any, page: any, rowsPerPage: any) => {
   return data.slice((page - 1) * rowsPerPage, page * rowsPerPage);
 };
 
-const useTable = (data: any, rowsPerPage: any, page: any) => {
+const useTable = (data: any, page: any, rowsPerPage: any) => {
   const [tableRange, setTableRange] = useState<any>([]);
   const [slice, setSlice] = useState<any>([]);
 

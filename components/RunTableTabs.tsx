@@ -13,7 +13,7 @@ export default function RunsTableTabs() {
   };
 
   return (
-    <Box className=" flex justify-center items-center mt-7 w-1/2">
+    <Box className="flex justify-center items-center mt-7 w-1/2 ">
       <Tabs
         value={value}
         onChange={handleChange}

@@ -17,12 +17,14 @@ export default function RunTableFooter({ range, setPage, page, slice }: props) {
   }, [setPage, page, slice]);
 
   return (
-    <div className="bg-red-500 p-3 w-full text-left">
+    <div className="bg-gray-200 py-2 text-left text-base text-gray-700 rounded-bl-lg rounded-br-lg flex items-center justify-center gap-2 w-1/2">
       {range.map((item: any, index: number) => {
         return (
           <button
             key={index}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-all duration-300"
+            className={`${
+              page === item ? "bg-white" : ""
+            } border-none px-4 rounded-lg cursor-pointer mr-1 ml-1 hover:bg-gray-300 transition-all duration-300`}
             onClick={() => setPage(item)}
           >
             {item}
