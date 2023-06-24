@@ -17,7 +17,7 @@ export default function RunTableFooter({ range, setPage, page, slice }: props) {
   }, [setPage, page, slice]);
 
   return (
-    <div className="bg-gray-200 py-2 text-left text-base text-gray-700 rounded-bl-lg rounded-br-lg flex items-center justify-center gap-2 w-1/2">
+    <div className="bg-gray-600 py-2 text-left text-base text-gray-700 rounded-bl-lg rounded-br-lg flex items-center justify-center gap-2 w-1/2">
       {range.map((item: any, index: number) => {
         return (
           <button

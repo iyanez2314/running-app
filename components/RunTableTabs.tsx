@@ -9,6 +9,8 @@ export default function RunsTableTabs() {
   const [value, setValue] = React.useState("one");
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    console.log(newValue);
+
     setValue(newValue);
   };
 
