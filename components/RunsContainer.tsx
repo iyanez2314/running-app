@@ -8,8 +8,16 @@ export default function RunsContainer() {
     <div className="flex-col flex justify-center items-center h-[500px]">
       <RunsHeader />
       {/* <RunsTableTabs /> */}
-      <RunsTable data={fakeData} rowsPerPage={4} />
-      <RunsTable data={fakeData} rowsPerPage={4} />
+      <RunsTable
+        data={fakeData}
+        rowsPerPage={4}
+        tableHeaderText={"Weekly Stats"}
+      />
+      <RunsTable
+        data={fakeData}
+        rowsPerPage={4}
+        tableHeaderText={"Lifetime Stats"}
+      />
     </div>
   );
 }

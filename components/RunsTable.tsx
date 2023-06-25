@@ -7,14 +7,19 @@ import RunTableFooter from "./RunTableFooter";
 interface Props {
   data: any[];
   rowsPerPage: any;
+  tableHeaderText: string;
 }
 
-export default function RunsTable({ data, rowsPerPage }: Props) {
+export default function RunsTable({
+  data,
+  rowsPerPage,
+  tableHeaderText,
+}: Props) {
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
   return (
     <>
-      <RunsTableHeader />
+      <RunsTableHeader tableHeadertext={tableHeaderText} />
       <table className="table-auto w-1/2">
         <thead className="bg-transparent transition-all duration-250 ease-in rounded-t-lg">
           <tr>
