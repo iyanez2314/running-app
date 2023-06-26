@@ -7,7 +7,6 @@ export default function RunsContainer() {
   return (
     <div className="flex-col flex justify-center items-center h-[500px]">
       <RunsHeader />
-      {/* <RunsTableTabs /> */}
       <RunsTable
         data={fakeData}
         rowsPerPage={4}
