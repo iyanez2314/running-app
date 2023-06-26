@@ -18,11 +18,18 @@ const style = {
   p: 4,
 };
 
+export interface Run {
+  distance: string;
+  time: string;
+  pace: string;
+  date: string;
+}
+
 export default function AddRunModal() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [inputs, setInputs] = useState({
+  const [inputs, setInputs] = useState<Run>({
     distance: "",
     time: "",
     pace: "",
@@ -35,8 +42,22 @@ export default function AddRunModal() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // add the run to the database
+    createRun(inputs);
     console.log(inputs);
     handleClose();
+  };
+
+  const createRun = async (run: Run) => {
+    const res = await fetch("/api/createRun", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(run),
+    });
+    const data = await res.json();
+    console.log(data);
   };
 
   return (
@@ -87,7 +108,7 @@ export default function AddRunModal() {
               <h2>Date</h2>
               <input
                 onChange={handleChange}
-                type="text"
+                type="date"
                 placeholder="10/10/2021"
                 name="date"
               />
